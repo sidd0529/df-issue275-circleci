@@ -18,7 +18,8 @@ jobs:
             # npm install --global circle-step-outputter
             # circle-step-outputter test-output
             echo 'export ECR_REPOSITORY_NAME="${AWS_RESOURCE_NAME_PREFIX}"' >> $BASH_ENV
-            echo 'export FULL_IMAGE_NAME="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${AWS_RESOURCE_NAME_PREFIX}:${CIRCLE_SHA1}"' >> $BASH_ENV
+            # echo 'export FULL_IMAGE_NAME="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${AWS_RESOURCE_NAME_PREFIX}:${CIRCLE_SHA1}"' >> $BASH_ENV
+            echo 'export FULL_IMAGE_NAME="go-server-test:${CIRCLE_SHA1}"' >> $BASH_ENV 
       - run:
           name: Build image
           command: |
