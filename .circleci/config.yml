@@ -19,7 +19,7 @@ jobs:
           name: Build image
           command: |
             echo $FULL_IMAGE_NAME
-            export RTAG=sid-dev
+            export RTAG=sid
             echo $RTAG
             docker build -t $FULL_IMAGE_NAME .
       - run:
