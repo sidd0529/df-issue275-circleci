@@ -13,6 +13,7 @@ jobs:
       - run:
           name: Setup common environment variables
           command: |
+            sudo apt-get update
             sudo apt-get install -y npm
             npm install --global circle-step-outputter
             circle-step-outputter test-output
